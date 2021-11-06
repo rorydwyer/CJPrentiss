@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 // Componets
+import Navigation from "./components/Navigation";
+import Hero from "./components/Hero";
+import Intro from "./components/Intro";
 import Gallery from "./components/Gallery";
 
 function App() {
@@ -15,10 +18,11 @@ function App() {
     getWorks();
   }, []);
 
-  console.log(works);
-
   return (
     <div className="App">
+      <Navigation />
+      <Hero />
+      <Intro />
       <Gallery works={works} />
     </div>
   );

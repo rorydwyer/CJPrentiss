@@ -19,7 +19,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App prose">
+    <div className="App bg-gray-100">
+      <div id="frame" style={{ borderWidth: "16px" }} className="fixed z-0 w-screen h-screen border-white"></div>
       <Navigation />
       <Hero />
       <Intro />

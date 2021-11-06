@@ -94,6 +94,8 @@ logs
 results
 node_modules
 .node_history
+font-end/node_modules
+back-end/node_modules
 
 ############################
 # Tests

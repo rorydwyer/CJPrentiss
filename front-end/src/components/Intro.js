@@ -1,7 +1,7 @@
-const Intro = () => {
+const Intro = ({ intro }) => {
   return (
-    <div>
-      <h2>Into about me</h2>
+    <div className="container mx-auto px-6 my-8 prose-2xl text-center">
+      <h2>{intro}</h2>
     </div>
   );
 };

@@ -16,7 +16,7 @@
       "type": "string"
     },
     "Image": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"

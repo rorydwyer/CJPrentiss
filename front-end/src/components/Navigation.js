@@ -1,6 +1,6 @@
 const Navigation = () => {
   return (
-    <div className="container fixed flex justify-end w-full p-4">
+    <div className="container fixed z-40 flex justify-end w-full p-4 text-white">
       <a className="hover:underline mx-2 p-2" href="#">
         Home
       </a>

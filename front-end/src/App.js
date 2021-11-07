@@ -29,9 +29,10 @@ function App() {
 
   return (
     <div className="App bg-gray-100">
-      <div id="frame" style={{ borderWidth: "16px" }} className="fixed z-40 w-screen h-screen border-white"></div>
+      {/* Need to set the frame so it doesnt cover the main document body */}
+      {/* <div id="frame" style={{ borderWidth: "16px" }} className="fixed z-40 w-screen h-screen border-white"></div> */}
       <div className="text-9xl text-white fixed z-0 -bottom-2 left-5">Christa Prentiss</div>
-      <Navigation />
+      <Navigation className="z-40 fixed" />
       <Hero />
       <div className="transform translate-x-0">
         <Intro intro={home.Intro} />

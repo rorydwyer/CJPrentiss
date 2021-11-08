@@ -43,7 +43,7 @@
   transform-origin: bottom left;
 }
 
-#intro-text .letter {
+#hero-text .letter {
   display: inline-block;
   /* line-height: 1em; */
 }

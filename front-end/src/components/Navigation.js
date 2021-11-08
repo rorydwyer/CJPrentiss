@@ -4,8 +4,8 @@ const Navigation = () => {
   const [color, setColor] = useState("white");
 
   const listenScrollEvent = () => {
-    if (window.scrollY > window.innerHeight - 28) {
-      setColor("black");
+    if (window.scrollY > window.innerHeight - 100) {
+      setColor("rgb(55, 65, 81)");
     } else {
       setColor("white");
     }
@@ -15,12 +15,17 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div style={{ color: color }} className="transition container fixed z-40 flex justify-end w-full p-4 nav-text">
-      <a className="hover:underline mx-2 p-2 nav-text" href="#">
-        Home
+    <div style={{ color: color }} className="transition container fixed z-40 flex justify-end w-full pt-20  nav-text font-light text-lg">
+      <style jsx>{`
+        :root {
+          --nav-color: ${color};
+        }
+      `}</style>
+      <a className="hover-underline-animation relative inline-block ml-14 p-2 pb-0 nav-text" href="#">
+        home
       </a>
-      <a className="hover:underline mx-2 p-2" href="#">
-        About
+      <a className="hover-underline-animation relative inline-block ml-14 p-2 pb-0" href="#">
+        about
       </a>
     </div>
   );

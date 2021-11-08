@@ -45,5 +45,6 @@
 
 #hero-text .letter {
   display: inline-block;
-  /* line-height: 1em; */
+  /* margin-left: -1px; */
+  line-height: 1em;
 }

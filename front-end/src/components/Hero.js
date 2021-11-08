@@ -10,7 +10,7 @@ const Hero = () => {
     anime.timeline().add({
       targets: "#hero-text .letter",
       translateY: [100, 0],
-      translateZ: 0,
+      // translateZ: 0,
       easing: "easeOutExpo",
       duration: 2000,
       delay: (el, i) => 1800 + 35 * i,

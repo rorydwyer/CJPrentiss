@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import SimpleReactLightbox from "simple-react-lightbox";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "./index.css";
@@ -8,11 +9,13 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SimpleReactLightbox>
-      <ParallaxProvider>
-        <App />
-      </ParallaxProvider>
-    </SimpleReactLightbox>
+    <BrowserRouter>
+      <SimpleReactLightbox>
+        <ParallaxProvider>
+          <App />
+        </ParallaxProvider>
+      </SimpleReactLightbox>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

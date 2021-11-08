@@ -6,15 +6,21 @@
   cursor: pointer;
 }
 
-.masonry-brick:nth-child(4n + 1) {
-  width: 300px;
+.masonry-brick {
+  /* Used to lazy load the images one at a time */
+  min-width: 400px;
 }
+
+.masonry-brick:nth-child(4n + 1) {
+  width: 350px;
+}
+
 .masonry-brick:nth-child(4n + 1):nth-child(4n + 2) {
-  width: 375px;
+  width: 375px !important;
 }
 .masonry-brick:nth-child(4n + 1):nth-child(4n + 3) {
-  width: 230px;
+  width: 230px !important;
 }
 .masonry-brick:nth-child(4n + 1):nth-child(4n + 4) {
-  width: 430px;
+  width: 430px !important;
 }

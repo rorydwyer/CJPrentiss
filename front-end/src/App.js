@@ -29,8 +29,7 @@ function App() {
 
   return (
     <div className="App bg-gray-100">
-      {/* Need to set the frame so it doesnt cover the main document body */}
-      {/* <div id="frame" style={{ borderWidth: "16px" }} className="fixed z-40 w-screen h-screen border-white"></div> */}
+      <div id="frame" style={{ borderWidth: "18px" }} className="fixed z-40 w-screen h-screen border-white pointer-events-none"></div>
       <div className="text-9xl text-white fixed -bottom-2 left-5">Christa Prentiss</div>
       <Navigation className="z-40 fixed" />
       <Hero />

@@ -1,13 +1,24 @@
 import Hero from "./Hero";
 
-const About = () => {
+const About = ({ about }) => {
   return (
     <div>
-      <Hero />
-      <div className="container mx-auto py-12">
-        <div className="grid grid-cols-2 gap-8">
-          <div>Image here</div>
-          <p>Something else</p>
+      {about.Image && <Hero imageURL={about.Image.url} text="About" />}
+      <div className="container mx-auto py-32 transform translate-x-0 z-40">
+        <div className="grid grid-cols-2 gap-36">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1616776005756-4dca36124bf9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+              alt="Profile"
+            />
+          </div>
+          <div className="prose-lg">
+            <p className="whitespace-pre-line">{about.AboutText}</p>
+            <div className="mt-12">
+              <span>Contact: </span>
+              <span>email@something.com</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

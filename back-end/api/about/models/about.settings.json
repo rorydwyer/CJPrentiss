@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "homes",
+  "collectionName": "abouts",
   "info": {
-    "name": "Home",
+    "name": "About",
     "description": ""
   },
   "options": {
@@ -12,13 +12,25 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "VideoURL": {
-      "type": "string"
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     },
-    "Intro": {
+    "AboutText": {
       "type": "richtext"
     },
-    "Image": {
+    "Email": {
+      "type": "string"
+    },
+    "Profile": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
+import { withController, useController } from "react-scroll-parallax";
 import anime from "animejs/lib/anime.es.js";
 
-const Hero = () => {
+const Hero = ({ imageURL, text }) => {
+  const { parallaxController } = useController();
+
   useEffect(() => {
     let textWrapper = document.querySelector("#hero-text");
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -12,17 +15,19 @@ const Hero = () => {
       translateY: [100, 0],
       easing: "easeOutExpo",
       duration: 2000,
-      delay: (el, i) => 1800 + 35 * i,
+      delay: (el, i) => 1500 + 35 * i,
     });
-  }, []);
+
+    parallaxController.update();
+  }, [imageURL, text, parallaxController]);
 
   return (
     <ParallaxBanner
       className="your-class"
       layers={[
         {
-          image: "https://images.unsplash.com/photo-1636136569435-d8221eb684bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-          amount: 0.3,
+          image: `http://localhost:1337${imageURL}`,
+          amount: 0.2,
         },
       ]}
       style={{
@@ -30,10 +35,10 @@ const Hero = () => {
       }}
     >
       <div id="hero-text" className="text-9xl text-white fixed -bottom-2 left-5">
-        Christa Prentiss
+        {text}
       </div>
     </ParallaxBanner>
   );
 };
 
-export default Hero;
+export default withController(Hero);

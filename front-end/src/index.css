@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.masonry-brick:hover {
+  cursor: pointer;
+}
+
 .masonry-brick:nth-child(4n + 1) {
   width: 300px;
 }

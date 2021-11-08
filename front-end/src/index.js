@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SimpleReactLightbox from "simple-react-lightbox";
+import { ParallaxProvider } from "react-scroll-parallax";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -8,7 +9,9 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <SimpleReactLightbox>
-      <App />
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
     </SimpleReactLightbox>
   </React.StrictMode>,
   document.getElementById("root")

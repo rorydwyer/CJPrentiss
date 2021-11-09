@@ -22,6 +22,7 @@ const Navigation = ({ location }) => {
     window.addEventListener("scroll", listenScrollEvent);
 
     listenScrollEvent();
+    window.scrollTo(0, 0);
   }, [location]);
 
   return (

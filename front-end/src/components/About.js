@@ -15,8 +15,10 @@ const About = ({ about }) => {
           <div className="prose-lg">
             <p className="whitespace-pre-line">{about.AboutText}</p>
             <div className="mt-12">
-              <span>Contact: </span>
-              <span>email@something.com</span>
+              <span className="font-light">Contact: </span>
+              <a href={`mailto:${about.Email}`} className="hover-underline-animation relative italic pb-2 font-serif">
+                {about.Email}
+              </a>
             </div>
           </div>
         </div>

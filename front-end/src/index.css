@@ -43,8 +43,92 @@
   transform-origin: bottom left;
 }
 
+.scroll-animation {
+  width: 1px;
+  height: 400px;
+}
+
+.scroll-animation:after {
+  animation-name: scroll-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  content: "";
+  position: absolute;
+  width: 1px;
+  transform: scaleX(0);
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-out;
+}
+
+@keyframes scroll-animation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    transform-origin: bottom left;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
 #hero-text .letter {
   display: inline-block;
-  /* margin-left: -1px; */
   line-height: 1em;
+}
+
+.scroll-text {
+  animation: scroll-text 3s infinite;
+  transition: all ease-in-out;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateY(-20px) rotate(-90deg);
+  }
+  60% {
+    transform: translateY(0) rotate(-90deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(-90deg);
+  }
+}
+
+.c-scroll-icon {
+  width: 21px;
+  height: 100px;
+  transform: translate3d(-50%, 0%, 0);
+  backface-visibility: hidden;
+}
+.c-scroll-icon .c-scroll-icon-line-mask {
+  position: relative;
+  overflow: hidden;
+  width: 21px;
+  height: 100px;
+  margin: 0 auto;
+}
+.c-scroll-icon .c-scroll-icon-line {
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 150px;
+  border-left: 1px solid #fff;
+  top: -150px;
+  left: 10px;
+  animation: scroll-line 3s infinite;
+  transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+@keyframes scroll-line {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 280px, 0);
+  }
 }

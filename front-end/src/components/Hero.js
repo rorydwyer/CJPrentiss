@@ -23,7 +23,7 @@ const Hero = ({ imageURL, text }) => {
 
   return (
     <ParallaxBanner
-      className="your-class"
+      className="relative"
       layers={[
         {
           image: `http://localhost:1337${imageURL}`,
@@ -34,6 +34,14 @@ const Hero = ({ imageURL, text }) => {
         height: "100vh",
       }}
     >
+      <div className="text-white absolute bottom-8 right-8">
+        <span className="scroll-text -left-6 -top-12 text-lg absolute">scroll</span>
+        <div class="c-scroll-icon">
+          <div class="c-scroll-icon-line-mask">
+            <div class="c-scroll-icon-line"></div>
+          </div>
+        </div>
+      </div>
       <div id="hero-text" className="text-9xl text-white fixed -bottom-2 left-5">
         {text}
       </div>

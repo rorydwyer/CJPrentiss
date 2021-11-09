@@ -15,7 +15,7 @@ function App() {
   const [works, setWorks] = useState([]);
   const [home, setHome] = useState([]);
   const [about, setAbout] = useState([]);
-  const [loaded, setLoaded] = useState(false);
+  // const [loaded, setLoaded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
     const getHome = async () => {
       const response = await axios.get("http://localhost:1337/home");
       setHome(response.data);
-      setLoaded(true);
+      // setLoaded(true);
     };
     getHome();
 

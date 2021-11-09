@@ -2,27 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-body {
+  padding-top: 0rem !important;
+}
+
+.leading-relaxed {
+  line-height: 1.625 !important;
+}
+
 .masonry-brick:hover {
   cursor: pointer;
 }
 
 .masonry-brick {
   /* Used to lazy load the images one at a time */
-  min-width: 400px;
+  min-width: 325px;
 }
 
 .masonry-brick:nth-child(4n + 1) {
-  width: 350px;
+  width: 300px;
 }
 
 .masonry-brick:nth-child(4n + 1):nth-child(4n + 2) {
-  width: 375px !important;
+  width: 325px !important;
 }
 .masonry-brick:nth-child(4n + 1):nth-child(4n + 3) {
-  width: 230px !important;
+  width: 170px !important;
 }
 .masonry-brick:nth-child(4n + 1):nth-child(4n + 4) {
-  width: 430px !important;
+  width: 380px !important;
 }
 
 .hover-underline-animation:after {

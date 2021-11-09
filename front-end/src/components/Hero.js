@@ -36,13 +36,13 @@ const Hero = ({ imageURL, text }) => {
     >
       <div className="text-white absolute bottom-8 right-8">
         <span className="scroll-text -left-6 -top-12 text-lg absolute">scroll</span>
-        <div class="c-scroll-icon">
-          <div class="c-scroll-icon-line-mask">
-            <div class="c-scroll-icon-line"></div>
+        <div className="c-scroll-icon">
+          <div className="c-scroll-icon-line-mask">
+            <div className="c-scroll-icon-line"></div>
           </div>
         </div>
       </div>
-      <div id="hero-text" className="text-9xl text-white fixed -bottom-2 left-5">
+      <div id="hero-text" className="text-5xl sm:text-7xl  md:text-8xl lg:text-9xl text-white fixed bottom-2 sm:bottom-1 md:bottom-0 lg:-bottom-2 left-5">
         {text}
       </div>
     </ParallaxBanner>

@@ -12,9 +12,9 @@ const Gallery = ({ works }) => {
   return (
     <div className="container mx-auto">
       <SRLWrapper options={options}>
-        <div id="gallery" className="flex flex-wrap justify-between -mx-8">
+        <div id="gallery" className="flex flex-wrap justify-between -mx-2 md:-mx-8">
           {works.map((work) => (
-            <div key={work.id} style={{ height: "420px" }} className="masonry-brick m-8 flex-auto overflow-hidden">
+            <div key={work.id} style={{ height: "420px" }} className="masonry-brick m-2 md:m-8 flex-auto overflow-hidden">
               <LazyLoadImage
                 effect="opacity"
                 alt={work.Title}

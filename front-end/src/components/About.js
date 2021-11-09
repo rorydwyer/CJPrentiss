@@ -4,9 +4,9 @@ const About = ({ about }) => {
   return (
     <div>
       {about.Image && <Hero imageURL={about.Image.url} text="About" />}
-      <div className="container mx-auto py-32 transform translate-x-0 z-40">
-        <div className="grid grid-cols-2 gap-36">
-          <div>
+      <div className="container mx-auto py-12 md:py-32 transform translate-x-0 z-40">
+        <div className="grid grid-cols-1 px-12 md:grid-cols-2 md:gap-12 lg:gap-36">
+          <div className="mb-12 md:mb-0">
             <img
               src="https://images.unsplash.com/photo-1616776005756-4dca36124bf9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
               alt="Profile"

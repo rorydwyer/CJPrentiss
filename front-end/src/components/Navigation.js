@@ -5,12 +5,6 @@ const Navigation = ({ location }) => {
   const [color, setColor] = useState("white");
 
   useEffect(() => {
-    // if (location === "/about") {
-    //   setColor("rgb(55, 65, 81)");
-    // } else {
-    //   setColor("white");
-    // }
-
     const listenScrollEvent = () => {
       if (window.scrollY > window.innerHeight - 100) {
         setColor("rgb(55, 65, 81)");
@@ -26,8 +20,13 @@ const Navigation = ({ location }) => {
   }, [location]);
 
   return (
-    <nav style={{ color: color }} className="transition container fixed z-40 flex justify-end w-full pt-20  nav-text font-light text-lg">
-      <style jsx>{`
+    <nav
+      style={{ color: color }}
+      className={`transition-all duration-700 ease-out fixed z-40 flex justify-end w-full nav-text font-light bg-opacity-0 text-lg pt-8 md:pt-20 pr-8 md:pr-24 ${
+        color === "white" ? "" : "bg-white bg-opacity-100 shadow-sm pb-2 nav-body"
+      }`}
+    >
+      <style>{`
         :root {
           --nav-color: ${color};
         }

@@ -39,10 +39,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App bg-gray-100">
+    <div className="App bg-gray-100 overflow-x-hidden">
       <div id="frame" style={{ borderWidth: "18px" }} className="fixed z-40 w-screen h-screen border-white pointer-events-none"></div>
-      {/* <div className="text-9xl text-white fixed -bottom-2 left-5">Christa Prentiss</div> */}
-      <Navigation location={location.pathname} className="z-40 fixed" />
+      <Navigation location={location.pathname} />
       <Routes>
         <Route
           path="/"

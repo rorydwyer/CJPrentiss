@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "VideoURL": {
-      "type": "string"
-    },
     "Intro": {
       "type": "richtext"
     },

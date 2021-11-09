@@ -8,11 +8,14 @@ import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
+// import Loading from "./components/Loading";
+import Footer from "./components/Footer";
 
 function App() {
   const [works, setWorks] = useState([]);
   const [home, setHome] = useState([]);
   const [about, setAbout] = useState([]);
+  const [loaded, setLoaded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,6 +23,7 @@ function App() {
     const getHome = async () => {
       const response = await axios.get("http://localhost:1337/home");
       setHome(response.data);
+      setLoaded(true);
     };
     getHome();
 
@@ -47,7 +51,9 @@ function App() {
           path="/"
           element={
             <>
-              {home.Image && <Hero imageURL={home.Image.url} text="Christa Prentiss" />}
+              {/* <Loading loaded={loaded} /> */}
+              {/* {home.Image ? <Hero imageURL={home.Image.url} text="Christa Prentiss" /> : '<div className="h-screen w-screen></div>'} */}
+              <div className="h-screen">{home.Image !== undefined && <Hero imageURL={home.Image.url} text="Christa Prentiss" />}</div>
               <div className="transform translate-x-0 z-40">
                 <Intro intro={home.Intro} />
                 <Gallery works={works} />
@@ -55,8 +61,17 @@ function App() {
             </>
           }
         />
-        <Route path="/about" element={<About about={about} />} />
+        <Route
+          path="/about"
+          element={
+            <>
+              {about.Image && <Hero imageURL={about.Image.url} text="About" />}
+              <About about={about} />
+            </>
+          }
+        />
       </Routes>
+      <Footer />
     </div>
   );
 }

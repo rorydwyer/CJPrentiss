@@ -1,9 +1,19 @@
 module.exports = ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
-  admin: {
-    auth: {
-      secret: env('ADMIN_JWT_SECRET', '11a191964b75b75f0491fd3e89dbc81c'),
+  defaultConnection: "default",
+  connections: {
+    default: {
+      connector: "bookshelf",
+      settings: {
+        client: "postgres",
+        host: env("DATABASE_HOST", "127.0.0.1"),
+        port: env.int("DATABASE_PORT", 5432),
+        database: env("DATABASE_NAME", "strapi"),
+        username: env("DATABASE_USERNAME", ""),
+        password: env("DATABASE_PASSWORD", ""),
+      },
+      options: {
+        ssl: false,
+      },
     },
   },
 });

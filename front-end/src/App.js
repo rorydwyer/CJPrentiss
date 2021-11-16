@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import axios from "axios";
+import sanityClient from "./client.js";
 
 // Componets
 import Navigation from "./components/Navigation";
@@ -19,25 +20,51 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
+    // sanityClient
+    //   .fetch(
+    //     `*[_type == 'work']{
+    //   title,
+    //   "imageUrl": image.asset->url
+    // }`
+    //   )
+    //   .then((res) => console.log(res));
+
     // Get home page data
     const getHome = async () => {
-      const response = await axios.get("http://localhost:1337/home");
-      setHome(response.data);
+      const response = await sanityClient.fetch(
+        `*[_type == 'homePage' && _id == 'homePage'][0]{
+          intro,
+          "imageUrl": heroImage.asset->url
+        }`
+      );
+      setHome(response);
       // setLoaded(true);
     };
     getHome();
 
     // Get about page data
     const getAbout = async () => {
-      const response = await axios.get("http://localhost:1337/about");
-      setAbout(response.data);
+      const response = await sanityClient.fetch(
+        `*[_type == 'aboutPage' && _id == 'aboutPage'][0]{
+        about,
+        email,
+        "heroUrl": heroImage.asset->url,
+        "profileUrl": profileImage.asset->url
+      }`
+      );
+      setAbout(response);
     };
     getAbout();
 
     // Get works / paintings for gallery
     const getWorks = async () => {
-      const response = await axios.get("http://localhost:1337/works");
-      setWorks(response.data);
+      const response = await sanityClient.fetch(
+        `*[_type == 'work']{
+      title,
+      "imageUrl": image.asset->url
+    }`
+      );
+      setWorks(response);
     };
     getWorks();
   }, []);
@@ -53,9 +80,9 @@ function App() {
             <>
               {/* <Loading loaded={loaded} /> */}
               {/* {home.Image ? <Hero imageURL={home.Image.url} text="Christa Prentiss" /> : '<div className="h-screen w-screen></div>'} */}
-              <div className="h-screen">{home.Image !== undefined && <Hero imageURL={home.Image.url} text="Christa Prentiss" />}</div>
+              <div className="h-screen">{home.imageUrl !== undefined && <Hero imageUrl={home.imageUrl} text="Christa Prentiss" />}</div>
               <div className="transform translate-x-0 z-40">
-                <Intro intro={home.Intro} />
+                <Intro intro={home.intro} />
                 <Gallery works={works} />
               </div>
             </>
@@ -65,7 +92,7 @@ function App() {
           path="/about"
           element={
             <>
-              {about.Image && <Hero imageURL={about.Image.url} text="About" />}
+              {about.heroUrl && <Hero imageUrl={about.heroUrl} text="About" />}
               <About about={about} />
             </>
           }

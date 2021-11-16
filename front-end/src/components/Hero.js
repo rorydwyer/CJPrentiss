@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import anime from "animejs/lib/anime.es.js";
 
-const Hero = ({ imageURL, text }) => {
+const Hero = ({ imageUrl, text }) => {
   useEffect(() => {
     let textWrapper = document.querySelector("#hero-text");
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -21,7 +21,7 @@ const Hero = ({ imageURL, text }) => {
       className="relative"
       layers={[
         {
-          image: `http://localhost:1337${imageURL}`,
+          image: imageUrl,
           amount: 0.2,
         },
       ]}

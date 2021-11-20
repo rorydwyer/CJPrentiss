@@ -94,10 +94,6 @@ logs
 results
 node_modules
 .node_history
-'font-end/node_modules'
-font-end/node_modules
-font-end/node_modules/
-back-end/node_modules
 
 ############################
 # Tests
@@ -116,5 +112,3 @@ exports
 *.cache
 build
 .strapi-updater.json
-front-end/node_modules/*
-front-end/node_modules/.bin/jest

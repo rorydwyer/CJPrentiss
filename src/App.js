@@ -61,7 +61,7 @@ function App() {
         `*[_type == 'work']{
       title,
       "imageUrl": image.asset->url
-    }`
+    }|order(orderRank)`
       );
       setWorks(response);
     };

@@ -18,10 +18,10 @@ const Gallery = ({ works }) => {
               <LazyLoadImage
                 effect="opacity"
                 alt={work.title}
-                src={work.imageUrl}
+                src={`${work.imageUrl}?w=1440&h=1440`}
                 className="object-cover w-full h-full align-middle"
                 wrapperClassName="w-full h-full"
-                threshold={0}
+                threshold={20}
               />
             </div>
           ))}

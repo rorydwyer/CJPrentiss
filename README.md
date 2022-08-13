@@ -1,3 +1,9 @@
+## Config into to remember
+
+- CMS on Sanity.io
+- App on Netlify
+- Version control on Github /rorydwyer
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,4 @@
-## Config into to remember
+## Config info to remember
 
 - CMS on Sanity.io
 - App on Netlify

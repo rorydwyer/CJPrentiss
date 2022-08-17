@@ -25,16 +25,6 @@ export default createSchema({
           type: "string",
         },
         {
-          name: "caption",
-          title: "Caption",
-          type: "string",
-        },
-        {
-          title: "Work URL",
-          name: "workUrl",
-          type: "url",
-        },
-        {
           name: "image",
           title: "Image",
           type: "image",

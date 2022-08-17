@@ -32,6 +32,24 @@ export default createSchema({
       ],
     },
     {
+      name: "publications",
+      title: "Publications",
+      type: "document",
+      fields: [
+        orderRankField({ type: "publications" }),
+        {
+          name: "publicationName",
+          title: "Publication Name",
+          type: "string",
+        },
+        {
+          name: "publicationUrl",
+          title: "Publication URL",
+          type: "url",
+        },
+      ],
+    },
+    {
       name: "homePage",
       title: "Home Page",
       type: "document",

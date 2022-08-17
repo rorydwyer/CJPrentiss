@@ -45,11 +45,11 @@ function App() {
     const getAbout = async () => {
       const response = await sanityClient.fetch(
         `*[_type == 'aboutPage' && _id == 'aboutPage'][0]{
-        about,
-        email,
-        "heroUrl": heroImage.asset->url,
-        "profileUrl": profileImage.asset->url
-      }`
+            about,
+            email,
+            "heroUrl": heroImage.asset->url,
+            "profileUrl": profileImage.asset->url
+        }`
       );
       setAbout(response);
     };
@@ -59,9 +59,10 @@ function App() {
     const getWorks = async () => {
       const response = await sanityClient.fetch(
         `*[_type == 'work']{
-      title,
-      "imageUrl": image.asset->url
-    }|order(orderRank)`
+          title,
+          caption,
+          "imageUrl": image.asset->url
+        }|order(orderRank)`
       );
       setWorks(response);
     };

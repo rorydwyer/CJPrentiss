@@ -38,8 +38,8 @@ export default createSchema({
       fields: [
         orderRankField({ type: "publications" }),
         {
-          name: "publicationName",
-          title: "Publication Name",
+          name: "title",
+          title: "Title",
           type: "string",
         },
         {

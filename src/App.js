@@ -6,6 +6,7 @@ import sanityClient from "./client.js";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
+import Publications from "./components/Publications.js";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
 // import Loading from "./components/Loading";
@@ -13,6 +14,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [works, setWorks] = useState([]);
+  const [publications, setPublications] = useState([]);
   const [home, setHome] = useState([]);
   const [about, setAbout] = useState([]);
   // const [loaded, setLoaded] = useState(false);
@@ -56,6 +58,18 @@ function App() {
     getAbout();
 
     // Get works / paintings for gallery
+    const getPublications = async () => {
+      const response = await sanityClient.fetch(
+        `*[_type == 'publications']{
+          title,
+          publicationUrl
+        }|order(orderRank)`
+      );
+      setPublications(response);
+    };
+    getPublications();
+
+    // Get works / paintings for gallery
     const getWorks = async () => {
       const response = await sanityClient.fetch(
         `*[_type == 'work']{
@@ -80,9 +94,10 @@ function App() {
             <>
               {/* <Loading loaded={loaded} /> */}
               {/* {home.Image ? <Hero imageURL={home.Image.url} text="Christa Prentiss" /> : '<div className="h-screen w-screen></div>'} */}
-              <div className="h-screen">{home.imageUrl !== undefined && <Hero imageUrl={home.imageUrl} text="Christa Prentiss" />}</div>
+              <div className="home-hero">{home.imageUrl !== undefined && <Hero imageUrl={home.imageUrl} text="Christa Prentiss" />}</div>
               <div className="transform translate-x-0 z-40">
                 <Intro intro={home.intro} />
+                <Publications publications={publications} />
                 <Gallery works={works} />
               </div>
             </>

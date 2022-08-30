@@ -22,12 +22,10 @@ const Hero = ({ imageUrl, text }) => {
       layers={[
         {
           image: imageUrl,
-          amount: 0.2,
+          amount: 0.1,
         },
       ]}
-      style={{
-        height: "100vh",
-      }}
+      style={{}}
     >
       <div className="text-white absolute bottom-8 right-8">
         <span className="scroll-text -left-6 -top-12 text-lg absolute">scroll</span>
